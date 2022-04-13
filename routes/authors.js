@@ -12,7 +12,7 @@ router.get("/new", (req, res) => {
 
 router.post("/", (req, res) => {
   // res.send(req.body.name);
-  console.log(req.body);
+  console.log(req.body.name);
 });
 
 module.exports = router;
