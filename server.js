@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Routerindex = require("./routes/index");
 const authorsindex = require("./routes/authors");
+const bookindex = require("./routes/books");
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
@@ -18,6 +19,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 app.use("/", Routerindex);
 app.use("/authors", authorsindex);
+app.use("/books", bookindex);
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
 const db = mongoose.connection;
